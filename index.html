@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gruppo 11 | Bandi e Progetti Fondazione San Paolo</title>
+  <meta name="description" content="Una panoramica interattiva dei bandi e dei progetti finanziati da Fondazione San Paolo. Corso di progetti urbanistici, Politecnico di Torino.">
+  
+  <!-- Modern Typography from Google Fonts (Karla) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Premium Minimal Header -->
+  <header class="studio-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="#" class="logo-link">
+          <span class="logo-text">Gruppo 11</span>
+        </a>
+      </div>
+      
+      <!-- Sticky Search Bar -->
+      <div class="search-container" role="search">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <input 
+          type="text" 
+          id="search-input" 
+          placeholder="Cerca progetti per nome, luogo..." 
+          aria-label="Cerca progetti"
+          autocomplete="off"
+        >
+        <button id="search-clear-btn" aria-label="Cancella ricerca" style="display: none;">&times;</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Interactive Hero: Physics Bubble Overview -->
+    <section class="hero-section" id="hero-overview">
+      <div class="hero-bg-accent"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="title-sub">POLITECNICO DI TORINO</span>
+          <span class="title-main">Progetti Urbanistici</span>
+        </h1>
+        <p class="hero-subtitle">
+          Esplora l'ecosistema dei 6 bandi e dei loro progetti sul territorio. Clicca sulle bolle per navigare nei dettagli dei singoli progetti.
+        </p>
+      </div>
+      
+      <!-- Canvas Simulation Container -->
+      <div id="canvas-container">
+        <canvas id="bubbles-canvas"></canvas>
+        <div class="canvas-instructions">
+          <span>Clicca per visualizzare l'elenco completo</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project List / Grid Section -->
+    <section class="projects-section" id="projects-list">
+      <div class="section-header">
+        <h2 class="section-title">Elenco Progetti</h2>
+        <div class="filter-status" id="filter-status">
+          Mostrati <span id="visible-count">0</span> di <span id="total-count">0</span> progetti
+        </div>
+      </div>
+      
+      <!-- Target for JavaScript Dynamic Rendering -->
+      <div class="macro-groups-container" id="macro-groups-target">
+        <div class="loading-state">
+          <div class="spinner"></div>
+          <p>Caricamento dati progetti...</p>
+        </div>
+      </div>
+      
+      <!-- No Results State -->
+      <div class="no-results-state" id="no-results" style="display: none;">
+        <svg class="no-results-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <h3>Nessun progetto trovato</h3>
+        <p>Prova a modificare i filtri o la query di ricerca.</p>
+        <button id="reset-search-btn" class="btn-primary">Ripristina ricerca</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="studio-footer">
+    <div class="footer-container">
+      <div class="footer-main-info">
+        <p class="footer-course">Gruppo 11 - Politecnico di Torino | Corso di Progetti Urbanistici con Janira Vassallo</p>
+        <p class="footer-students">Studenti: Tiziano Albertino, Flavia Battaglia, Benedetta Compagnone 'Birbante', Roberta Cusmai e Daniele Falchi</p>
+        <p class="footer-year">ANNO ACCADEMICO 2025-2026</p>
+      </div>
+      <div class="footer-meta">
+        <p>Dati: <strong>Fondazione Compagnia di San Paolo</strong></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Script -->
+  <script src="app.js"></script>
+</body>
+</html>

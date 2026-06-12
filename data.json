@@ -1,0 +1,368 @@
+[
+  {
+    "row": 3,
+    "color": "E9E085",
+    "name": "La cultura dietro l'angolo: ritrovi d'arte, musica e teatro da vivere insieme sotto casa",
+    "budget_nominale": "25.000 €",
+    "budget_dettaglio": "Budget macro-strutturale iniziale di 360.000 €",
+    "micro_projects": [
+      {
+        "name": "Circoscrizione 2 - Casa nel Parco (Mirafiori Sud)",
+        "location": "Via Modesto Panetti, 1, 10127 Torino TO"
+      },
+      {
+        "name": "Circoscrizione 2 - Biblioteca civica “A. Passerin d’Entrèves”",
+        "location": "Via Guido Reni, 102, 10136 Torino TO"
+      },
+      {
+        "name": "Circoscrizione 3 - Binaria Centro Commensale (Gruppo Abele)",
+        "location": "Via Sestriere, 34, 10141 Torino TO"
+      },
+      {
+        "name": "Circoscrizione 4 - Più SpazioQuattro (San Donato)",
+        "location": "Piazza Innocenzo Vigliardi Paravia, 3/d, 10144 Torino TO"
+      },
+      {
+        "name": "Circoscrizione 5 - Officine CAOS / Casa del Quartiere Vallette",
+        "location": "Piazza Eugenio Montale, 18a, 10151 Torino TO"
+      },
+      {
+        "name": "Circoscrizione 5 - Beeozanam (Borgo Vittoria)",
+        "location": "Via Foligno, 14, 10149 Torino TO"
+      },
+      {
+        "name": "Circoscrizione 6 - Bagni Pubblici di via Agliè (Barriera di Milano)",
+        "location": "Via Agliè, 9, 10154 Torino TO"
+      },
+      {
+        "name": "Circoscrizione 6 - Biblioteca civica \"Don Lorenzo Milani\"",
+        "location": "Via dei Pioppi, 43, 10156 Torino TO"
+      },
+      {
+        "name": "Circoscrizione 7 - Cecchi Point (Aurora)",
+        "location": "Via Antonio Cecchi, 17, 10152 Torino TO"
+      },
+      {
+        "name": "Circoscrizione 7 - Centro Interculturale della Città di Torino",
+        "location": "Corso Taranto, 160, 10154 Torino TO"
+      },
+      {
+        "name": "Circoscrizione 7 - Biblioteca civica \"Italo Calvino\"",
+        "location": "Lungo Dora Agrigento, 94, 10152 Torino TO"
+      },
+      {
+        "name": "Circoscrizione 8 - Casa del Quartiere di San Salvario",
+        "location": "Via Oddino Morgari, 14, 10125 Torino TO"
+      },
+      {
+        "name": "Museo Egizio",
+        "location": "Via Accademia delle Scienze, 6"
+      },
+      {
+        "name": "Gallerie d’Italia",
+        "location": "Piazza San Carlo, 156"
+      },
+      {
+        "name": "GAM - Galleria d’Arte Moderna e Contemporanea",
+        "location": "Via Magenta, 31"
+      },
+      {
+        "name": "CAMERA - Centro Italiano per la Fotografia",
+        "location": "Via delle Rosine, 18"
+      },
+      {
+        "name": "MAcA Museo A come Ambiente",
+        "location": "Corso Umbria, 90"
+      },
+      {
+        "name": "Polo del '900",
+        "location": "Piazzetta Franco Antonicelli"
+      },
+      {
+        "name": "Unione Musicale presso Teatro Vittoria",
+        "location": "Via Antonio Gramsci, 4"
+      },
+      {
+        "name": "Unione Musicale presso Conservatorio Giuseppe Verdi",
+        "location": "Piazza Bodoni"
+      },
+      {
+        "name": "Fondazione TPE Teatro Piemonte Europa presso Teatro Astra",
+        "location": "Via Rosolino Pilo, 6"
+      },
+      {
+        "name": "Fondazione TRG presso Casa del Teatro",
+        "location": "Corso Galileo Ferraris, 266"
+      },
+      {
+        "name": "Teatro Stabile di Torino presso Teatro Carignano",
+        "location": "Piazza Carignano, 6"
+      },
+      {
+        "name": "Teatro Stabile di Torino presso Teatro Gobetti",
+        "location": "Via Rossini, 8"
+      }
+    ]
+  },
+  {
+    "row": 4,
+    "color": "8C86AA",
+    "name": "Città nella Città – Sei progetti per la Cavallerizza Reale di Torino",
+    "budget_nominale": "25.000.000 €",
+    "budget_dettaglio": "40 milioni di euro",
+    "micro_projects": [
+      {
+        "name": "Sei progetti per la Cavallerizza Reale di Torino",
+        "location": "Via Giuseppe Verdi, 9, 10124 Torino TO"
+      }
+    ]
+  },
+  {
+    "row": 5,
+    "color": "A6D9EA",
+    "name": "CivICa. Progetti di Cultura e Innovazione Civica",
+    "budget_nominale": "280.000 €",
+    "budget_dettaglio": "1.731.000 €",
+    "micro_projects": [
+      {
+        "name": "PROGETTO URRÀ (Associazione Kallipolis) Residenze artistiche e laboratori di co-design per favorire l'inclusione sociale e riattivare i cortili comuni dei complessi ERP di Mirafiori Sud.",
+        "location": "Via Emanuele Artom, 55 - Via Emanuele Artom, 81"
+      },
+      {
+        "name": "PROGETTO URRÀ (Associazione Kallipolis) Processi di coinvolgimento dei residenti e laboratori interculturali nei cortili popolari di Borgo Filadelfia attraverso l'arte pubblica.",
+        "location": "Via Pasquale Galluppi 12 - Via Pasquale Galluppi 21"
+      },
+      {
+        "name": "PROGETTO URRÀ (Associazione Kallipolis) Interventi di animazione culturale e percorsi partecipativi mirati a valorizzare lo storico Villaggio ERP e connetterlo al quartiere Crocetta.",
+        "location": "Via Arquata 12"
+      },
+      {
+        "name": "PROGETTO URRÀ (Associazione Kallipolis) Iniziative di rigenerazione civica e creatività urbana per stimolare la coesione sociale tra gli abitanti del blocco popolare ex-IACP.",
+        "location": "Corso Vigevano 22"
+      },
+      {
+        "name": "PROGETTO URRÀ (Associazione Kallipolis) Attività di ascolto e micro-interventi artistici per riqualificare e curare in modo partecipato i grandi cortili geometrici ERP di Lucento.",
+        "location": "Via Verolengo 181"
+      },
+      {
+        "name": "PRESIDIO CULTURALE BEEOWANAM (APS OrtiAlti) Hub civico e culturale polifunzionale nato dalla comunità: ospita orti urbani sui tetti, economia circolare, co-working e attività di quartiere.",
+        "location": "Via Foligno 14"
+      }
+    ]
+  },
+  {
+    "row": 6,
+    "color": "EAA983",
+    "name": "YEPP (Youth Empowerment Partnership Programme)",
+    "budget_nominale": "1.000.000 €",
+    "budget_dettaglio": "Tra i 4,5 e i 5 milioni di euro",
+    "micro_projects": [
+      {
+        "name": "YEPP Porta Palazzo presso la Casa del Quartiere Cecchi Point",
+        "location": "Via Antonio Cecchi, 17/21"
+      },
+      {
+        "name": "YEPP Falchera - percorso di co-progettazione culturale che offre opportunità educative nel campo della creatività, come ad esempio gli spazi del centro \"El Barrio\"",
+        "location": "Via Maria Vittoria, 38"
+      },
+      {
+        "name": "YEPP Italia Sede di Torino. Intervento volto a sostenere \"l'infrastruttura\" di YEPP sul territorio",
+        "location": "Via dei Pioppi, 50"
+      },
+      {
+        "name": "YEPP Mirafiori - Il primissimo sito pilota YEPP in Italia. Nel 2008 il percorso YEPP è confluito direttamente nella nascita della Fondazione della Comunità di Mirafiori",
+        "location": "ex Centro di educazione all'immagine di via Millelire, attuale Centro Elio Mosso"
+      },
+      {
+        "name": "YEPP Parella - Avviato nel 2003 in concomitanza con Mirafiori, ha rappresentato il secondo polo di test del metodo YEPP nel tessuto urbano torinese. Il progetto ha lavorato sull'aggregazione dei ragazzi della zona ovest della città, costruendo partnership tra le realtà educative del quartiere",
+        "location": "Quartiere Parella, Torino (Circoscrizione 4)"
+      }
+    ]
+  },
+  {
+    "row": 7,
+    "color": "BAD689",
+    "name": "Bando SPACE",
+    "budget_nominale": "140.000 €",
+    "budget_dettaglio": "5.042.000 €",
+    "micro_projects": [
+      {
+        "name": "Anatra Zoppa",
+        "location": "Via Giovanni Poggio 23"
+      },
+      {
+        "name": "Beeozanam Community Hub",
+        "location": "Via Foligno 14"
+      },
+      {
+        "name": "Bellarte",
+        "location": "Via Ludovico Bellardi 116"
+      },
+      {
+        "name": "Binaria",
+        "location": "Via Sestriere 34"
+      },
+      {
+        "name": "Bocciofila Vanchiglietta",
+        "location": "Lungo Dora Pietro Colletta 39/A"
+      },
+      {
+        "name": "Bunker",
+        "location": "Via Niccolò Paganini 0/A"
+      },
+      {
+        "name": "Cafè Neruda",
+        "location": "Via Giambattista Ciriè 22"
+      },
+      {
+        "name": "CAP10100",
+        "location": "Corso Moncalieri 18"
+      },
+      {
+        "name": "Cartiera Centro del Protagonismo Giovanile",
+        "location": "Via Francesco Leonardo Cartiera 15"
+      },
+      {
+        "name": "Casa Fools",
+        "location": "Via Eusebio Bava 39"
+      },
+      {
+        "name": "CasArcobaleno",
+        "location": "Via Bernardino Tivoli 4"
+      },
+      {
+        "name": "Centro Culturale Italo-Arabo Dar al Hikma",
+        "location": "Via Luigi Tarino 9"
+      },
+      {
+        "name": "Centro Mirafleming",
+        "location": "Via Guido Reni 96/15"
+      },
+      {
+        "name": "Cinema Teatro Maffei",
+        "location": "Via Principe Tommaso 5"
+      },
+      {
+        "name": "Circolo Antonio Banfo",
+        "location": "Via Antonio Banfo 4"
+      },
+      {
+        "name": "Circolo Risorgimento",
+        "location": "Via Giovanni Poggio 16"
+      },
+      {
+        "name": "Comala - Ex Caserma La Marmora",
+        "location": "Corso Francesco Ferrucci 65/A"
+      },
+      {
+        "name": "CPG Torino",
+        "location": "Strada delle Cacce 36"
+      },
+      {
+        "name": "Cumiana15",
+        "location": "Via Cumiana 15"
+      },
+      {
+        "name": "Galleria della Spina",
+        "location": "Via Francesco Cigna 96"
+      },
+      {
+        "name": "Hiroshima Mon Amour",
+        "location": "Via Carlo Bossoli 83"
+      },
+      {
+        "name": "Imbarchino",
+        "location": "Viale Umberto Cagni 37"
+      },
+      {
+        "name": "Impianto Sportivo Polifunzionale Il Fortino",
+        "location": "Strada del Fortino 20"
+      },
+      {
+        "name": "l'ARTeficIO | Showroom & Art Factory",
+        "location": "Via Claudio Luigi Berthollet 25/D"
+      },
+      {
+        "name": "La Casa dell'Ambiente",
+        "location": "Corso Moncalieri 18"
+      },
+      {
+        "name": "La Fabbrica del Chinino",
+        "location": "Via Francesco d'Assisi 55"
+      },
+      {
+        "name": "Lo Spaccio di Cultura - Portineria di Comunità",
+        "location": "Piazza della Repubblica 1/F"
+      },
+      {
+        "name": "MUFANT",
+        "location": "Via Claudio Monteverdi 15"
+      },
+      {
+        "name": "Orti Generali",
+        "location": "Strada del Drosso 21"
+      },
+      {
+        "name": "Polo Culturale Lombroso16",
+        "location": "Via Cesare Lombroso 16"
+      },
+      {
+        "name": "Raffinerie Sociali - Nuovi Spazi Urbani",
+        "location": "Via Foggia 28"
+      },
+      {
+        "name": "Spazi di Connessioni Creative",
+        "location": "Via Luigi Colli 20"
+      },
+      {
+        "name": "Spazio BAC",
+        "location": "Corso Regina Margherita 104"
+      },
+      {
+        "name": "SPAZIO211",
+        "location": "Via Francesco Cigna 211"
+      },
+      {
+        "name": "Via Baltea",
+        "location": "Via Baltea 3"
+      },
+      {
+        "name": "Ziggy (o Ziggy Club)",
+        "location": "Via Claudio Luigi Berthollet 25/A"
+      }
+    ]
+  },
+  {
+    "row": 8,
+    "color": "CFCBE1",
+    "name": "SPARKS: giovani che attivano",
+    "budget_nominale": "170.000 €",
+    "budget_dettaglio": "Intorno a 1 milione di euro",
+    "micro_projects": [
+      {
+        "name": "Toolbox Coworking",
+        "location": "Via Agostino da Montefeltro 2"
+      },
+      {
+        "name": "Magazzini Oz",
+        "location": "Via Giovanni Giolitti 19/A"
+      },
+      {
+        "name": "Campus Luigi Einaudi (CLE) - Spazi Autogestiti e Spazio 104",
+        "location": "Lungo Dora Siena 100"
+      },
+      {
+        "name": "Off Topic (Hub Culturale / Network Giovani)",
+        "location": "Via Giorgio Pallavicino 35"
+      },
+      {
+        "name": "Spazio 211 (Linee di Formazione Musicale)",
+        "location": "Via Francesco Cigna 211"
+      },
+      {
+        "name": "Cecchi Point (Hub Multiculturale Hub Multimediale)",
+        "location": "Via Antonio Cecchi 17"
+      }
+    ]
+  }
+]
