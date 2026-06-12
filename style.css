@@ -26,7 +26,7 @@
   --color-p5: #A6D9EA;
   --color-p6: #EAA983;
   --color-p7: #BAD689;
-  --color-p8: #CFCBE1;
+  --color-p8: #FFADCC;
   
   --shadow-subtle: 0 4px 15px rgba(0, 0, 0, 0.04);
   --shadow-glass: 0 8px 30px rgba(0, 0, 0, 0.06);
@@ -107,7 +107,7 @@ body {
 .logo-text {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 1.25rem;
+  font-size: 0.95rem;
   letter-spacing: -0.5px;
   color: var(--text-primary);
   text-transform: uppercase;
@@ -183,29 +183,25 @@ main {
 }
 
 .hero-title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 12px;
+  display: block;
+  width: 100%;
+  max-width: 540px; /* Beautiful compact block of text */
+  margin: 0 auto 12px auto;
+  text-align: center;
 }
 
-.title-sub {
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 0.75rem;
-  letter-spacing: 4px;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
-
-.title-main {
+.title-line {
+  display: block;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 2.2rem;
-  letter-spacing: -0.5px;
-  line-height: 1.2;
+  font-size: 2rem;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
   color: var(--text-primary);
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 100%;
+  transform-origin: center;
 }
 
 .hero-subtitle {
@@ -221,7 +217,7 @@ main {
 #canvas-container {
   position: relative;
   width: 100%;
-  height: 400px; /* Compact height for mobile */
+  height: 280px; /* Highly horizontal on mobile to allow easy page scrolling */
   margin-top: 15px;
   overflow: hidden;
 }
@@ -718,12 +714,12 @@ main {
     padding: 50px 30px 20px 30px;
   }
   
-  .title-main {
+  .title-line {
     font-size: 3rem;
   }
   
   #canvas-container {
-    height: 520px; /* Extra height on desktop to give bubbles lots of air */
+    height: 500px; /* Extra height on desktop to give bubbles lots of air */
     margin-top: 30px;
   }
   

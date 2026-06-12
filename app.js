@@ -298,28 +298,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let width = 0;
     let height = 0;
     
-    const bubbles = [];
-    let hoveredBubble = null;
-    let draggedBubble = null;
-    let dragOffset = { x: 0, y: 0 };
-    let mouse = { x: 0, y: 0 };
-    
-    // Resizing
-    function resizeCanvas() {
-      width = canvasContainer.clientWidth;
-      height = canvasContainer.clientHeight;
-      canvas.width = width;
-      canvas.height = height;
-    }
-    
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-    
-    // Physics constants
-    const gravity = 0.025;      // Gentler central pull
-    const friction = 0.97;      // Damping
-    const mouseRepulsion = 0.25; // Push from cursor
-    
     // Mapped bubble size directly proportional to budget complessivo/dettaglio
     const radiiMap = {
       3: 50,  // La cultura dietro l'angolo (360k €)
@@ -339,14 +317,90 @@ document.addEventListener('DOMContentLoaded', () => {
       7: "5.042.000 €",
       4: "40.000.000 €"
     };
+
+    const bubbles = [];
+    let hoveredBubble = null;
+    let draggedBubble = null;
+    let dragOffset = { x: 0, y: 0 };
+    let mouse = { x: 0, y: 0 };
+    let currentScale = 1.0;
+    
+    // Resizing
+    function resizeCanvas() {
+      const containerWidth = canvasContainer.clientWidth;
+      const containerHeight = canvasContainer.clientHeight;
+      
+      // Fallback to window width or default values if container is not yet rendered (0 width/height)
+      width = containerWidth || window.innerWidth || 375;
+      const isMobile = width < 768;
+      height = containerHeight || (isMobile ? 280 : 500);
+      
+      canvas.width = width;
+      canvas.height = height;
+      
+      const targetScale = isMobile ? 0.52 : 1.0;
+      currentScale = targetScale;
+      
+      bubbles.forEach(b => {
+        b.baseRadius = b.originalRadius * currentScale;
+        
+        let targetR = b.baseRadius * (b.filterScale || 1.0);
+        if (b.isHovered) {
+          targetR = targetR * 1.12;
+        }
+        b.targetRadius = targetR;
+      });
+      
+      adjustTitleSizes();
+    }
+
+    function adjustTitleSizes() {
+      const lines = document.querySelectorAll('.title-line');
+      const container = document.querySelector('.hero-title');
+      if (!container || lines.length === 0) return;
+      
+      const containerWidth = container.clientWidth;
+      if (containerWidth <= 0) return;
+      
+      lines.forEach(line => {
+        line.style.display = 'inline-block';
+        line.style.fontSize = '10px';
+        
+        const naturalWidth = line.offsetWidth;
+        if (naturalWidth > 0) {
+          // Adjust font size dynamically to fill the container width exactly
+          // Subtracting 2px prevents subpixel wrapping and alignment bugs
+          const fontSize = ((containerWidth - 2) / naturalWidth) * 10;
+          line.style.fontSize = `${fontSize}px`;
+        }
+        
+        line.style.display = 'block';
+      });
+    }
+
+    if (document.fonts) {
+      document.fonts.ready.then(() => {
+        adjustTitleSizes();
+      });
+    }
+    
+    // Physics constants
+    const gravity = 0.025;      // Gentler central pull
+    const friction = 0.97;      // Damping
+    const mouseRepulsion = 0.25; // Push from cursor
     
     // Initialize bubbles
     data.forEach((bando, index) => {
-      const r = radiiMap[bando.row] || 70;
+      const baseR = radiiMap[bando.row] || 70;
+      const containerWidth = canvasContainer.clientWidth;
+      const fallbackWidth = containerWidth || window.innerWidth || 375;
+      const isMobile = fallbackWidth < 768;
+      const initialScale = isMobile ? 0.52 : 1.0;
+      const r = baseR * initialScale;
       
       const angle = (index / data.length) * Math.PI * 2;
-      const centerX = width / 2;
-      const centerY = height / 2;
+      const centerX = fallbackWidth / 2;
+      const centerY = (canvasContainer.clientHeight || (isMobile ? 280 : 500)) / 2;
       const distance = 80;
       const x = centerX + Math.cos(angle) * distance;
       const y = centerY + Math.sin(angle) * distance;
@@ -380,16 +434,21 @@ document.addEventListener('DOMContentLoaded', () => {
         y: y,
         vx: (Math.random() - 0.5) * 1.2,
         vy: (Math.random() - 0.5) * 1.2,
+        originalRadius: baseR,
         baseRadius: r,
         radius: r,
         targetRadius: r,
         alpha: 1.0,
         targetAlpha: 1.0,
+        filterScale: 1.0,
         isHovered: false,
         isDragged: false,
         dots: dots
       });
     });
+    
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
     
     function abbreviateName(name) {
       if (name.includes('cultura dietro l\'angolo')) return 'Cultura d\'Angolo';
@@ -462,13 +521,6 @@ document.addEventListener('DOMContentLoaded', () => {
           b.x += b.vx;
           b.y += b.vy;
         }
-        
-        // Canvas Boundaries
-        const margin = b.radius + 5;
-        if (b.x < margin) { b.x = margin; b.vx *= -0.5; }
-        if (b.x > width - margin) { b.x = width - margin; b.vx *= -0.5; }
-        if (b.y < margin) { b.y = margin; b.vy *= -0.5; }
-        if (b.y > height - margin) { b.y = height - margin; b.vy *= -0.5; }
         
         // ----------------- Bouncing Dots Inside Bubble Physics -----------------
         const dotMargin = b.radius - 4; // limit boundary slightly inside bubble edge
@@ -551,6 +603,45 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
       }
+      
+      // Calculate dynamic scale factor based on boundary overflow
+      const targetScale = width < 768 ? 0.52 : 1.0;
+      const minScale = width < 768 ? 0.35 : 0.65;
+      
+      let overflows = false;
+      bubbles.forEach(b => {
+        const padding = 2; // small padding
+        if (b.x - b.radius < padding || b.x + b.radius > width - padding || 
+            b.y - b.radius < padding || b.y + b.radius > height - padding) {
+          overflows = true;
+        }
+      });
+      
+      if (overflows) {
+        currentScale = Math.max(minScale, currentScale - 0.005);
+      } else {
+        currentScale = Math.min(targetScale, currentScale + 0.002);
+      }
+      
+      // Update bubble radii based on the dynamic scale
+      bubbles.forEach(b => {
+        b.baseRadius = b.originalRadius * currentScale;
+        
+        let targetR = b.baseRadius * (b.filterScale || 1.0);
+        if (b.isHovered) {
+          targetR = targetR * 1.12;
+        }
+        b.targetRadius = targetR;
+      });
+      
+      // Canvas Boundaries (Run last to guarantee no visual clipping at edges)
+      bubbles.forEach(b => {
+        const margin = b.radius + 3; // Keep bubble strictly inside canvas bounds (3px padding)
+        if (b.x < margin) { b.x = margin; b.vx *= -0.5; }
+        if (b.x > width - margin) { b.x = width - margin; b.vx *= -0.5; }
+        if (b.y < margin) { b.y = margin; b.vy *= -0.5; }
+        if (b.y > height - margin) { b.y = height - margin; b.vy *= -0.5; }
+      });
     }
     
     // Draw loop
@@ -630,6 +721,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function tick() {
+      const containerWidth = canvasContainer.clientWidth;
+      const containerHeight = canvasContainer.clientHeight;
+      
+      // Only trigger resize if container size has changed and is non-zero,
+      // or if we currently have 0 size and the container has a non-zero size.
+      if (containerWidth > 0 && containerHeight > 0 && 
+          (width !== containerWidth || height !== containerHeight)) {
+        resizeCanvas();
+      }
+      
       updatePhysics();
       draw();
       animationId = requestAnimationFrame(tick);
@@ -761,7 +862,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     canvas.addEventListener('touchmove', (e) => {
       onMouseMove(e);
-      e.preventDefault();
+      if (draggedBubble) {
+        e.preventDefault();
+      }
     }, { passive: false });
     
     canvas.addEventListener('touchstart', (e) => {
@@ -778,7 +881,7 @@ document.addEventListener('DOMContentLoaded', () => {
         bubbles.forEach(b => {
           if (matchingRows.includes(b.row)) {
             b.targetAlpha = 1.0;
-            b.targetRadius = b.baseRadius;
+            b.filterScale = 1.0;
             
             // Update dots visibility inside matching bubble
             const matchData = matchingProjectsMap ? matchingProjectsMap[b.row] : null;
@@ -793,7 +896,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           } else {
             b.targetAlpha = 0.1;
-            b.targetRadius = b.baseRadius * 0.6;
+            b.filterScale = 0.6;
             // Hide all dots if bubble itself is not matching
             b.dots.forEach(dot => {
               dot.visible = false;
@@ -804,7 +907,7 @@ document.addEventListener('DOMContentLoaded', () => {
       resetFilter: () => {
         bubbles.forEach(b => {
           b.targetAlpha = 1.0;
-          b.targetRadius = b.baseRadius;
+          b.filterScale = 1.0;
           b.dots.forEach(dot => {
             dot.visible = true;
           });
